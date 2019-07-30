@@ -15,12 +15,12 @@ class Sidebar extends Component {
         <Logo src={logoImage} />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
           <Menu.Item key="1">
-            <Icon type="user" />
-            <span className="nav-text">nav 1</span>
+            <Icon type="table" />
+            <span className="nav-text">Table View</span>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="video-camera" />
-            <span className="nav-text">nav 2</span>
+            <Icon type="pie-chart" />
+            <span className="nav-text">Chart View</span>
           </Menu.Item>
         </Menu>
       </Sider>

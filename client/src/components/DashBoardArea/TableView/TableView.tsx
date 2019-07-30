@@ -1,44 +1,34 @@
 import React, { Component } from 'react'
 import { Table } from 'antd'
-
-const dataSource = [
-  {
-    key: '1',
-    name: 'Mike',
-    age: 32,
-    address: '10 Downing Street',
-  },
-  {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street',
-  },
-];
+import { AssociatedAthletes } from '../../../interfaces/athletes'
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
+    title: 'Athlete',
+    dataIndex: 'athlete',
+    key: 'athlete',
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Muscle Soreness',
+    dataIndex: 'muscleSoreness',
+    key: 'muscleSoreness',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Sleep Quality',
+    dataIndex: 'sleepQuality',
+    key: 'sleepQuality',
   },
 ];
 
-class TableView extends Component {
+interface TableViewProps {
+  dataSource: AssociatedAthletes[];
+}
+
+class TableView extends Component<TableViewProps> {
   render () {
     return (
       <Table
-        dataSource={dataSource}
+        dataSource={this.props.dataSource}
         columns={columns}
         pagination={false}
       />
