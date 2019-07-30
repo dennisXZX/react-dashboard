@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const athletes = require('./server/controllers/athletes')
 
 const app = express();
 
@@ -7,11 +8,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Put all API endpoints under '/api'
-app.get('/api', (req, res) => {
-  res.json({
-    name: 'dennis'
-  });
-});
+app.use('/api', athletes);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.

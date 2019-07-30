@@ -6,7 +6,7 @@ const { Content, Footer } = Layout;
 
 class DashBoardArea extends Component {
   componentDidMount() {
-    fetch('/api')
+    fetch('/api/athletes')
       .then(data => data.json())
       .then(data => console.log(data))
   }
