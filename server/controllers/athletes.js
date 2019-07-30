@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const ATHELETE_DATA = require('../mock/ATHELETE_DATA')
+const ATHLETE_DATA = require('../data/ATHLETE_DATA')
 
 router.get('/athletes', (req, res) => {
-  res.json(ATHELETE_DATA);
+  res.json(ATHLETE_DATA);
 })
 
 module.exports = router
