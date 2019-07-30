@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const athletes = require('./server/controllers/athletes')
+const athletes = require('./server/routes/athletes')
 
 const app = express();
 
