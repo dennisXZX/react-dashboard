@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class App extends Component {
   componentDidMount () {
@@ -7,11 +7,9 @@ class App extends Component {
       .then(data => console.log(data))
   }
 
-  render() {
+  render () {
     return (
-      <div className="App">
-        hello
-      </div>
+      <div></div>
     );
   }
 }
