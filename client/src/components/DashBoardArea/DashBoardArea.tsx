@@ -55,10 +55,10 @@ class DashBoardArea extends Component<DashBoardAreaProps> {
 }
 
 function mapStateToProps(state: any) {
-  const { activeView } = state.views
+  const { view } = state
 
   return {
-    activeView
+    activeView: view.activeView
   }
 }
 
