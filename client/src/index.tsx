@@ -5,11 +5,11 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 import App from './components/App';
-import store from './store/configStore'
+import store from './store/configStore';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
 );

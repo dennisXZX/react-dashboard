@@ -1,29 +1,25 @@
 import { IAction } from '../../interfaces/actions';
-import { IViewState } from '../../interfaces/store'
-import { LIST_VIEW } from '../../constants/views'
-import { CHANGE_VIEW } from '../actions/viewActions'
+import { IViewState } from '../../interfaces/store';
+import { LIST_VIEW } from '../../constants/views';
+import { CHANGE_VIEW } from '../actions/viewActions';
 
 const initialState = {
-  activeView: LIST_VIEW
+	activeView: LIST_VIEW
 };
 
 const changeView = (state: IViewState, action: IAction) => {
-  return {
-    ...state,
-    activeView: action.data
-  }
-}
+	return {
+		...state,
+		activeView: action.data
+	};
+};
 
-export default function reducer(
-  state: IViewState = initialState,
-  action: IAction,
-): IViewState {
-  switch (action.type) {
+export default function reducer(state: IViewState = initialState, action: IAction): IViewState {
+	switch (action.type) {
+		case CHANGE_VIEW:
+			return changeView(state, action);
 
-    case CHANGE_VIEW:
-      return changeView(state, action)
-
-    default:
-      return state;
-  }
+		default:
+			return state;
+	}
 }

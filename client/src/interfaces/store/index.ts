@@ -1,3 +1,3 @@
 export interface IViewState {
-  activeView: string;
+	activeView: string;
 }

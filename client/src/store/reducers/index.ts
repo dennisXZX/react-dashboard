@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import view from './viewReducer';
 
 const rootReducer = combineReducers({
-  view
+	view
 });
 
-export default rootReducer
+export default rootReducer;
