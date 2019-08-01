@@ -10,7 +10,7 @@ import { CHART_VIEW, LIST_VIEW } from '../../constants/views';
 const { Content, Footer } = Layout;
 
 interface DashBoardAreaProps {
-	activeView: any;
+	activeView: string;
 }
 
 class DashBoardArea extends Component<DashBoardAreaProps> {

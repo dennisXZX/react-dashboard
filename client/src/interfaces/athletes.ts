@@ -2,12 +2,15 @@
  * data shape of formatted athletes data set
  */
 export interface AssociatedAthletes {
-	/** athlete ID */
+	/** unique key for the athlete */
 	key: string;
-	/** athlete name */
+
+	/** name of athlete */
 	athlete: string;
-	/** value indicates the Soreness level of athlete's muscle groups */
+
+	/** the soreness level of athlete's muscle groups */
 	muscleSoreness: number;
-	/** value indicates how well the athlete rested */
+
+	/** athlete's sleep quality */
 	sleepQuality: number;
 }

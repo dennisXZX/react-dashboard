@@ -5,12 +5,11 @@ import logoImage from '../../assets/images/logo.png';
 import { changeView } from '../../store/actions/viewActions';
 import { connect } from 'react-redux';
 import { CHART_VIEW, LIST_VIEW } from '../../constants/views';
-import { AssociatedAthletes } from '../../interfaces/athletes';
 
 const { Sider } = Layout;
 
 interface SidebarProps {
-	changeView: any;
+	changeView: (newView: string) => Object;
 }
 
 class Sidebar extends Component<SidebarProps> {
