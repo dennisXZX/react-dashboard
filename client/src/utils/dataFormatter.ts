@@ -1,4 +1,4 @@
-import { AssociatedAthletes } from '../interfaces/athletes';
+import { FormattedAthlete } from '../interfaces/athletes';
 
 /**
  * Generate a random key.
@@ -13,7 +13,7 @@ const generateRandomKey = () =>
  * @param athleteData original data set.
  */
 export const associateStaticsToAthlete = (athleteData: any) => {
-	const associatesAthletes: AssociatedAthletes[] = [];
+	const associatesAthletes: FormattedAthlete[] = [];
 
 	for (let i = 0; i < athleteData.athlete.length; i++) {
 		associatesAthletes.push({

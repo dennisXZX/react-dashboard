@@ -1,7 +1,7 @@
 /**
  * data shape of formatted athletes data set
  */
-export interface AssociatedAthletes {
+export interface FormattedAthlete {
 	/** unique key for the athlete */
 	key: string;
 

@@ -1,41 +1,33 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 import TableView from './TableView/TableView';
-import axios from 'axios';
 import ChartView from './ChartView/ChartView';
-import { associateStaticsToAthlete } from '../../utils/dataFormatter';
 import { connect } from 'react-redux';
 import { CHART_VIEW, LIST_VIEW } from '../../constants/views';
+import { loadAthleteData } from '../../store/actions/athleteActions'
+import { FormattedAthlete } from '../../interfaces/athletes'
 
 const { Content, Footer } = Layout;
 
 interface DashBoardAreaProps {
 	activeView: string;
+  athletes: Array<FormattedAthlete>
+  loadAthleteData: () => void
 }
 
 class DashBoardArea extends Component<DashBoardAreaProps> {
-	state = {
-		athletes: []
-	};
 
 	componentDidMount() {
-		axios.get('/api/athletes').then(res => {
-			const processedData = associateStaticsToAthlete(res.data);
-			console.log(processedData);
-
-			this.setState({
-				athletes: processedData
-			});
-		});
+    this.props.loadAthleteData()
 	}
 
 	render() {
-		const { activeView } = this.props;
+		const { activeView, athletes } = this.props;
 
 		return (
 			<Layout>
 				<Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-					{activeView === LIST_VIEW && <TableView dataSource={this.state.athletes} />}
+					{activeView === LIST_VIEW && <TableView dataSource={athletes} />}
 
 					{activeView === CHART_VIEW && <ChartView />}
 				</Content>
@@ -46,11 +38,16 @@ class DashBoardArea extends Component<DashBoardAreaProps> {
 }
 
 function mapStateToProps(state: any) {
-	const { view } = state;
+	const { view, athlete } = state;
 
 	return {
-		activeView: view.activeView
+		activeView: view.activeView,
+    athletes: athlete.athletes
 	};
 }
 
-export default connect(mapStateToProps)(DashBoardArea);
+const mapDispatchToProps = {
+  loadAthleteData
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashBoardArea);
