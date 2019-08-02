@@ -4,21 +4,14 @@ import TableView from './TableView/TableView';
 import ChartView from './ChartView/ChartView';
 import { connect } from 'react-redux';
 import { CHART_VIEW, LIST_VIEW } from '../../constants/views';
-import { loadAthleteData } from '../../store/actions/athleteActions'
-import { FormattedAthlete } from '../../interfaces/athletes'
+import { loadAthleteData } from '../../store/actions/athleteActions';
+import { DashBoardAreaProps } from './IDashBoardArea';
 
 const { Content, Footer } = Layout;
 
-interface DashBoardAreaProps {
-	activeView: string;
-  athletes: Array<FormattedAthlete>
-  loadAthleteData: () => void
-}
-
 class DashBoardArea extends Component<DashBoardAreaProps> {
-
 	componentDidMount() {
-    this.props.loadAthleteData()
+		this.props.loadAthleteData();
 	}
 
 	render() {
@@ -42,12 +35,15 @@ function mapStateToProps(state: any) {
 
 	return {
 		activeView: view.activeView,
-    athletes: athlete.athletes
+		athletes: athlete.athletes
 	};
 }
 
 const mapDispatchToProps = {
-  loadAthleteData
-}
+	loadAthleteData
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashBoardArea);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(DashBoardArea);

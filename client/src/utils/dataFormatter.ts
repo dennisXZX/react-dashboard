@@ -1,4 +1,4 @@
-import { FormattedAthlete } from '../interfaces/athletes';
+import { FormattedAthlete } from '../interfaces/IAthletes';
 
 /**
  * Generate a random key.

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'antd';
-import { FormattedAthlete } from '../../../interfaces/athletes';
+import { TableViewProps } from './ITableView';
 
 const columns = [
 	{
@@ -20,16 +20,9 @@ const columns = [
 	}
 ];
 
-interface TableViewProps {
-	dataSource: FormattedAthlete[];
-}
-
 class TableView extends Component<TableViewProps> {
 	render() {
-		return <Table
-      dataSource={this.props.dataSource}
-      columns={columns}
-      pagination={false}/>;
+		return <Table dataSource={this.props.dataSource} columns={columns} pagination={false} />;
 	}
 }
 

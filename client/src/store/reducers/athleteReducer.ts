@@ -1,4 +1,4 @@
-import { IAthleteState } from '../../interfaces/states';
+import { IAthleteState } from '../../interfaces/IStates';
 import { LOAD_ATHLETE_DATA_SUCCESS } from '../actions/athleteActions';
 
 const initialState = {

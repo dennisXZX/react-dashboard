@@ -1,4 +1,4 @@
-import { FormattedAthlete } from './athletes';
+import { FormattedAthlete } from './IAthletes';
 
 export interface IViewState {
 	activeView: string;

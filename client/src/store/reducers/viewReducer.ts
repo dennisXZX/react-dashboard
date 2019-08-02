@@ -1,4 +1,4 @@
-import { IViewState } from '../../interfaces/states';
+import { IViewState } from '../../interfaces/IStates';
 import { LIST_VIEW } from '../../constants/views';
 import { CHANGE_VIEW } from '../actions/viewActions';
 
