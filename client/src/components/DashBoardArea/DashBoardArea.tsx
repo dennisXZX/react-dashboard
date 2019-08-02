@@ -7,7 +7,7 @@ import { CHART_VIEW, LIST_VIEW } from '../../constants/views';
 import { loadAthleteData } from '../../store/actions/athleteActions';
 import { DashBoardAreaProps } from './IDashBoardArea';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 class DashBoardArea extends Component<DashBoardAreaProps> {
 	componentDidMount() {
@@ -24,7 +24,6 @@ class DashBoardArea extends Component<DashBoardAreaProps> {
 
 					{activeView === CHART_VIEW && <ChartView />}
 				</Content>
-				<Footer style={{ textAlign: 'center' }}>Created by Dennis Xiao</Footer>
 			</Layout>
 		);
 	}

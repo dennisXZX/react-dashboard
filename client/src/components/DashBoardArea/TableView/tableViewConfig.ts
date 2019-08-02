@@ -20,3 +20,17 @@ export const columns = [
 		sorter: (a: FormattedAthlete, b: FormattedAthlete) => a.sleepQuality - b.sleepQuality
 	}
 ];
+
+export const footerGenerator: any = (data: Array<FormattedAthlete>) => {
+	const sumSoreness = data
+		.map((athleteData: FormattedAthlete) => athleteData.muscleSoreness)
+		.reduce((accumulator, currentValue) => {
+			return accumulator + currentValue;
+		}, 0);
+
+	const averageSoreness = sumSoreness / data.length;
+
+	const summaryText = `Average Muscle Soreness: ${averageSoreness}`;
+
+	return summaryText;
+};
