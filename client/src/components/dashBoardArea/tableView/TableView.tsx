@@ -7,7 +7,12 @@ class TableView extends Component<TableViewProps> {
 	render() {
 		const { dataSource } = this.props;
 
-		return <Table dataSource={dataSource} columns={columns} pagination={false} footer={footerGenerator} />;
+		return <Table
+      dataSource={dataSource}
+      columns={columns}
+      pagination={false}
+      footer={footerGenerator}
+    />;
 	}
 }
 

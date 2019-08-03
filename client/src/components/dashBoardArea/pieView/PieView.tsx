@@ -34,11 +34,19 @@ class ChartView extends Component<PieViewProps> {
 		return (
 			<PieViewContainer>
 				<PieChartContainer>
-					<PieChart dataset={sorenessDataset} title="Muscle Soreness Distribution" labels={sorenessLabels} />
+					<PieChart
+            dataset={sorenessDataset}
+            title="Muscle Soreness Distribution"
+            labels={sorenessLabels}
+          />
 				</PieChartContainer>
 
 				<PieChartContainer>
-					<PieChart dataset={sleepQualityDataset} title="Sleep Quality Distribution" labels={sleepQualityLabels} />
+					<PieChart
+            dataset={sleepQualityDataset}
+            title="Sleep Quality Distribution"
+            labels={sleepQualityLabels}
+          />
 				</PieChartContainer>
 			</PieViewContainer>
 		);
