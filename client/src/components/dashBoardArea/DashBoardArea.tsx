@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import TableView from './TableView/TableView';
-import ChartView from './ChartView/ChartView';
+import TableView from './tableView/TableView';
+import PieView from './pieView/PieView';
 import { connect } from 'react-redux';
-import { CHART_VIEW, LIST_VIEW } from '../../constants/views';
+import { PIE_VIEW, TABLE_VIEW } from '../../constants/views';
 import { loadAthleteData } from '../../store/actions/athleteActions';
 import { DashBoardAreaProps } from './IDashBoardArea';
 
@@ -20,9 +20,9 @@ class DashBoardArea extends Component<DashBoardAreaProps> {
 		return (
 			<Layout>
 				<Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-					{activeView === LIST_VIEW && <TableView dataSource={athletes} />}
+					{activeView === TABLE_VIEW && <TableView dataSource={athletes} />}
 
-					{activeView === CHART_VIEW && <ChartView />}
+					{activeView === PIE_VIEW && <PieView dataSource={athletes} />}
 				</Content>
 			</Layout>
 		);

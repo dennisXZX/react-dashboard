@@ -1,9 +1,9 @@
 import { IViewState } from '../../interfaces/IStates';
-import { LIST_VIEW } from '../../constants/views';
+import { PIE_VIEW } from '../../constants/views';
 import { CHANGE_VIEW } from '../actions/viewActions';
 
 const initialState = {
-	activeView: LIST_VIEW
+	activeView: PIE_VIEW
 };
 
 const changeView = (state: IViewState, action: any) => {

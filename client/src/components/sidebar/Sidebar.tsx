@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import Logo from './Logo';
+import Logo from './logo/Logo';
 import logoImage from '../../assets/images/logo.png';
 import { changeView } from '../../store/actions/viewActions';
 import { connect } from 'react-redux';
-import { CHART_VIEW, LIST_VIEW } from '../../constants/views';
+import { PIE_VIEW, TABLE_VIEW } from '../../constants/views';
 import { SidebarProps } from './ISidebar';
 
 const { Sider } = Layout;
@@ -18,14 +18,14 @@ class Sidebar extends Component<SidebarProps> {
 				<Logo src={logoImage} />
 
 				<Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-					<Menu.Item key="1" onClick={() => changeView(LIST_VIEW)}>
+					<Menu.Item key="1" onClick={() => changeView(TABLE_VIEW)}>
 						<Icon type="table" />
 						<span className="nav-text">Table View</span>
 					</Menu.Item>
 
-					<Menu.Item key="2" onClick={() => changeView(CHART_VIEW)}>
+					<Menu.Item key="2" onClick={() => changeView(PIE_VIEW)}>
 						<Icon type="pie-chart" />
-						<span className="nav-text">Chart View</span>
+						<span className="nav-text">Pie View</span>
 					</Menu.Item>
 				</Menu>
 			</Sider>
