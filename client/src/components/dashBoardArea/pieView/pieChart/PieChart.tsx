@@ -27,8 +27,21 @@ class PieChart extends Component<PieChartProps> {
 			options: {
 				title: {
 					display: true,
-					text: title
-				}
+					text: title,
+          fontSize: 18
+				},
+        legend: {
+				  position: 'bottom',
+          labels: {
+            padding: 8
+          }
+        },
+        tooltips: {
+				  mode: 'dataset',
+          xPadding: 15,
+          yPadding: 15,
+          bodySpacing: 10
+        }
 			}
 		});
 	}
