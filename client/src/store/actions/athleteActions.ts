@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { associateStaticsToAthlete } from '../../utils/dataFormatter';
+import { formatAthleteDataset } from '../../utils/dataFormatter';
 
 /** action types */
 
@@ -29,7 +29,7 @@ export const loadAthleteData = () => (dispatch: any) => {
 	axios
 		.get('/api/athletes')
 		.then(({ data }) => {
-			const formattedAthletesData = associateStaticsToAthlete(data);
+			const formattedAthletesData = formatAthleteDataset(data);
 
 			dispatch(loadAthleteDataSuccess(formattedAthletesData));
 		})

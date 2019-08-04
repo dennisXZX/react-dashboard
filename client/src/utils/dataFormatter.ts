@@ -1,7 +1,8 @@
-import { FormattedAthlete } from '../interfaces/IAthletes';
+import { AthleteDataset, FormattedAthlete } from '../interfaces/IAthletes';
 
 /**
- * Generate a random key.
+ * @description
+ * Generate a random key
  */
 const generateRandomKey = () =>
 	Math.random()
@@ -9,17 +10,19 @@ const generateRandomKey = () =>
 		.substring(2, 15);
 
 /**
- * assign ID, muscleSoreness value and sleepQuality to each athlete
- * @param athleteData original data set.
+ * @description
+ * Format athlete data
+ *
+ * @param athleteData - original data set
  */
-export const associateStaticsToAthlete = (athleteData: any) => {
+export const formatAthleteDataset = (athleteData: AthleteDataset) => {
 	const associatesAthletes: FormattedAthlete[] = [];
 
 	for (let i = 0; i < athleteData.athlete.length; i++) {
 		associatesAthletes.push({
+			athlete: athleteData.athlete[i],
 			key: generateRandomKey(),
 			muscleSoreness: Number(athleteData.muscleSoreness[i]),
-			athlete: athleteData.athlete[i],
 			sleepQuality: Number(athleteData.sleepQuality[i])
 		});
 	}

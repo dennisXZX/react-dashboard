@@ -13,7 +13,7 @@ class PieChart extends Component<PieChartProps> {
 
 		const bgColors = generatePieChartColors(dataset);
 
-		new Chart(pieChartRef, {
+    new Chart(pieChartRef, {
 			type: 'pie',
 			data: {
 				datasets: [

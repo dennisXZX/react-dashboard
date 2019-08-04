@@ -1,4 +1,13 @@
 /**
+ * data shape of un-formatted athletes data set
+ */
+export interface AthleteDataset {
+	athlete: Array<string>;
+	muscleSoreness: Array<string>;
+	sleepQuality: Array<string>;
+}
+
+/**
  * data shape of formatted athletes data set
  */
 export interface FormattedAthlete {
