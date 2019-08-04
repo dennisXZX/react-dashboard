@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Chart from 'chart.js';
 import { PieChartProps } from './IPieChart';
-import { generatePieChartColors } from '../../../../utils/color'
+import { generateChartColors } from '../../../../utils/color'
 
 class PieChart extends Component<PieChartProps> {
 	pieChartRef: any = React.createRef();
@@ -11,7 +11,7 @@ class PieChart extends Component<PieChartProps> {
 
 		const pieChartRef = this.pieChartRef.current.getContext('2d');
 
-		const bgColors = generatePieChartColors(dataset);
+		const bgColors = generateChartColors(dataset);
 
     new Chart(pieChartRef, {
 			type: 'pie',

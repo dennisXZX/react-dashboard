@@ -4,10 +4,10 @@ import { AthleteDataset, FormattedAthlete } from '../interfaces/IAthletes';
  * @description
  * Generate a random key
  */
-const generateRandomKey = () =>
+export const generateRandomKey = () =>
 	Math.random()
 		.toString(36)
-		.substring(2, 15);
+		.substring(2, 10);
 
 /**
  * @description
