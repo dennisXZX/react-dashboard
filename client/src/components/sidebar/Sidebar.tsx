@@ -17,7 +17,7 @@ class Sidebar extends Component<SidebarProps> {
 			<Sider breakpoint="lg" collapsedWidth="0">
 				<Logo src={logoImage} />
 
-				<Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+				<Menu theme="dark" mode="vertical">
 					<Menu.Item key="1" onClick={() => changeView(TABLE_VIEW)}>
 						<Icon type="table" />
 						<span className="nav-text">Table View</span>
