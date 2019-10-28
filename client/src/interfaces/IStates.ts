@@ -6,4 +6,6 @@ export interface IViewState {
 
 export interface IAthleteState {
 	athletes: Array<FormattedAthlete>;
+	isFetching: boolean;
+	errorMessage: string;
 }

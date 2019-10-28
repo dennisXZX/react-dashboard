@@ -19,7 +19,7 @@ class DashBoardArea extends Component<DashBoardAreaProps> {
 
 		return (
 			<Layout>
-				<Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+				<Content>
 					{activeView === TABLE_VIEW && <TableView dataSource={athletes} />}
 
 					{activeView === PIE_VIEW && <PieView dataSource={athletes} />}
