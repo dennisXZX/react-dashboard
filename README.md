@@ -6,15 +6,15 @@ This project is deployed [here](https://dashboard.heroku.com/apps/still-eyrie-50
 
 ## Functionality
 This is a web application that contains the following main features:
-- Users can view the data in table view
-- Users can view the data in pie view
+- Users can view data in table view
+- Users can view data in pie view
 
 ## Technology
-- Code: `React (16.7.0), Redux (4.0.1), date-fns, axios`
+- Libraries: `React, Redux, axios`
 - Styling: `styled-components`
 - Linting: `Eslint`
 - Testing: `Jest, Enzyme`
-- Build: `Create-React-App (Webpack)`
+- Build: `Create-React-App`
 - Deployment: `Heroku`
 
 ## Development
@@ -32,9 +32,7 @@ Run the app in development mode on `http://localhost:3000/`.
 
 Launch test runner and run all the tests.
 
-## Considerations
-- Lazy load is implemented for each view
-
 ## Future Improvement
-- Implement memoised selector using `re-select`
-- Mobile UI design could be improved.
+- Implement memoised selector using `re-select` so to reduce unnecessary mapStateToProps calls.
+- Handle data loading and error states. Currently data loading and error are handled in reducer, but it's not reflected in the UI.
+- Implement lazy loading. Add routing for table view and pie view so we can take advantage of lazy loading.
