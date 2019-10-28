@@ -36,4 +36,5 @@ Launch test runner and run all the tests.
 - Lazy load is implemented for each view
 
 ## Future Improvement
+- Implement memoised selector using `re-select`
 - Mobile UI design could be improved.

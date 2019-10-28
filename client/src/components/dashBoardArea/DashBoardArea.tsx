@@ -6,8 +6,13 @@ import { connect } from 'react-redux';
 import { PIE_VIEW, TABLE_VIEW } from '../../constants/views';
 import { loadAthleteData } from '../../store/actions/athleteActions';
 import { DashBoardAreaProps } from './IDashBoardArea';
+import styled from 'styled-components';
 
 const { Content } = Layout;
+
+const ContentContainer = styled.div`
+	margin-top: 17px;
+`;
 
 class DashBoardArea extends Component<DashBoardAreaProps> {
 	componentDidMount() {
@@ -19,11 +24,13 @@ class DashBoardArea extends Component<DashBoardAreaProps> {
 
 		return (
 			<Layout>
-				<Content>
-					{activeView === TABLE_VIEW && <TableView dataSource={athletes} />}
+				<ContentContainer>
+					<Content>
+						{activeView === TABLE_VIEW && <TableView dataSource={athletes} />}
 
-					{activeView === PIE_VIEW && <PieView dataSource={athletes} />}
-				</Content>
+						{activeView === PIE_VIEW && <PieView dataSource={athletes} />}
+					</Content>
+				</ContentContainer>
 			</Layout>
 		);
 	}

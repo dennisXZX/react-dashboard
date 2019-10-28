@@ -6,11 +6,20 @@ import _ from 'lodash';
 
 const PieViewContainer = styled.div`
 	display: flex;
+	flex-direction: column;
+	
+	@media (min-width: 1200px) {
+		flex-direction: row;
+	}
 `;
 
 const PieChartContainer = styled.div`
-	width: 50%;
-	padding: 5px 0 30px 0;
+	width: 100%;
+	margin-bottom: 25px;
+	
+	@media (min-width: 1200px) {
+		margin-bottom: 0;
+	}
 `;
 
 class ChartView extends Component<PieViewProps> {
