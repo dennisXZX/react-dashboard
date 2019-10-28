@@ -22,15 +22,24 @@ export const columns = [
 ];
 
 export const footerGenerator: any = (data: Array<FormattedAthlete>) => {
+	const dataLength = data.length;
+
 	const sumSoreness = data
 		.map((athleteData: FormattedAthlete) => athleteData.muscleSoreness)
 		.reduce((accumulator, currentValue) => {
 			return accumulator + currentValue;
 		}, 0);
 
-	const averageSoreness = sumSoreness / data.length;
+	const sumSleepQuality = data
+		.map((athleteData: FormattedAthlete) => athleteData.sleepQuality)
+		.reduce((accumulator, currentValue) => {
+			return accumulator + currentValue;
+		}, 0);
 
-	const summaryText = `Average Muscle Soreness: ${averageSoreness}`;
+	const averageSoreness = sumSoreness / dataLength;
+	const averageSleepQuality = sumSleepQuality / dataLength;
+
+	const summaryText = `Average Muscle Soreness: ${averageSoreness}, Average Sleep Quality: ${averageSleepQuality}`;
 
 	return summaryText;
 };
