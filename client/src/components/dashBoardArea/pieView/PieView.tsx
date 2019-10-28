@@ -23,39 +23,41 @@ const PieChartContainer = styled.div`
 `;
 
 class ChartView extends Component<PieViewProps> {
-	render() {
+	generateFormattedDataset = (propertyName: string) => {
 		const { dataSource } = this.props;
 
-		const rawSorenessDataset = dataSource.map(athleteData => athleteData.muscleSoreness);
+		// @ts-ignore
+		const rawDataset = dataSource.map(athleteData => athleteData[propertyName]);
+		const countedDataset = _.countBy(rawDataset);
+		const labels = Object.keys(countedDataset);
+		const data = Object.values(countedDataset);
 
-		const countedSorenessDataset = _.countBy(rawSorenessDataset);
+		return {
+			labels,
+			data
+		};
+	};
 
-		const sorenessLabels = Object.keys(countedSorenessDataset);
-		const sorenessDataset = Object.values(countedSorenessDataset);
-
-		const rawSleepQualityDataset = dataSource.map(athleteData => athleteData.sleepQuality);
-
-		const countedSleepQualityDataset = _.countBy(rawSleepQualityDataset);
-
-		const sleepQualityLabels = Object.keys(countedSleepQualityDataset);
-		const sleepQualityDataset = Object.values(countedSleepQualityDataset);
+	render () {
+		const sorenessDataset = this.generateFormattedDataset('muscleSoreness');
+		const sleepQualityDataset = this.generateFormattedDataset('sleepQuality');
 
 		return (
 			<PieViewContainer>
 				<PieChartContainer>
 					<PieChart
-            dataset={sorenessDataset}
-            title="Muscle Soreness Distribution"
-            labels={sorenessLabels}
-          />
+						dataset={sorenessDataset.data}
+						title="Muscle Soreness Distribution"
+						labels={sorenessDataset.labels}
+					/>
 				</PieChartContainer>
 
 				<PieChartContainer>
 					<PieChart
-            dataset={sleepQualityDataset}
-            title="Sleep Quality Distribution"
-            labels={sleepQualityLabels}
-          />
+						dataset={sleepQualityDataset.data}
+						title="Sleep Quality Distribution"
+						labels={sleepQualityDataset.labels}
+					/>
 				</PieChartContainer>
 			</PieViewContainer>
 		);
