@@ -9,3 +9,8 @@ export interface IAthleteState {
 	isFetching: boolean;
 	errorMessage: string;
 }
+
+export interface IAppState {
+	view: IViewState;
+	athlete: IAthleteState;
+}

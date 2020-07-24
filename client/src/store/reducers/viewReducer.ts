@@ -1,4 +1,4 @@
-import { IViewState } from '../../interfaces/IStates';
+import { IViewState } from '../../interfaces/IAppStates';
 import { TABLE_VIEW } from '../../constants/views';
 import { CHANGE_VIEW } from '../actions/viewActions';
 

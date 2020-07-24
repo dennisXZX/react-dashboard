@@ -1,4 +1,4 @@
-import { IAthleteState } from '../../interfaces/IStates';
+import { IAthleteState } from '../../interfaces/IAppStates';
 import { LOAD_ATHLETE_DATA_FAIL, LOAD_ATHLETE_DATA_START, LOAD_ATHLETE_DATA_SUCCESS } from '../actions/athleteActions';
 
 const initialState = {
