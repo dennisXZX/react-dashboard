@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table } from 'antd';
 import { TableViewProps } from './ITableView';
 import { columns, footerGenerator } from './tableViewConfig';
 
-class TableView extends Component<TableViewProps> {
-	render() {
-		const { dataSource } = this.props;
+const TableView: React.FC<TableViewProps> = props => {
+		const { dataSource } = props;
 
 		return <Table
       dataSource={dataSource}
@@ -13,7 +12,6 @@ class TableView extends Component<TableViewProps> {
       pagination={false}
       footer={footerGenerator}
     />;
-	}
 }
 
 export default TableView;
