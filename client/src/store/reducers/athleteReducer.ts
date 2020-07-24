@@ -7,7 +7,7 @@ const initialState = {
 	errorMessage: ''
 };
 
-export default function reducer(state: IAthleteState = initialState, action: any): IAthleteState {
+const athleteReducer = (state: IAthleteState = initialState, action: any): IAthleteState => {
 	switch (action.type) {
 		case LOAD_ATHLETE_DATA_START:
 			return {
@@ -32,4 +32,6 @@ export default function reducer(state: IAthleteState = initialState, action: any
 		default:
 			return state;
 	}
-}
+};
+
+export default athleteReducer;

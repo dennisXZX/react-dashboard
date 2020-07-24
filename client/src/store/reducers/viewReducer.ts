@@ -6,7 +6,7 @@ const initialState = {
 	activeView: TABLE_VIEW
 };
 
-export default function reducer(state: IViewState = initialState, action: any): IViewState {
+const viewReducer = (state: IViewState = initialState, action: any): IViewState => {
 	switch (action.type) {
 		case CHANGE_VIEW:
 			return {
@@ -17,4 +17,6 @@ export default function reducer(state: IViewState = initialState, action: any): 
 		default:
 			return state;
 	}
-}
+};
+
+export default viewReducer;
