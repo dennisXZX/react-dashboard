@@ -1,16 +1,16 @@
 import { FormattedAthlete } from './IAthletes';
 
-export interface IViewState {
+export interface ViewState {
 	activeView: string;
 }
 
-export interface IAthleteState {
+export interface AthleteState {
 	athletes: Array<FormattedAthlete>;
 	isFetching: boolean;
 	errorMessage: string;
 }
 
-export interface IAppState {
-	view: IViewState;
-	athlete: IAthleteState;
+export interface AppState {
+	view: ViewState;
+	athlete: AthleteState;
 }

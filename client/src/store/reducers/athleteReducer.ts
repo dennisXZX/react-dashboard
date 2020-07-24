@@ -1,4 +1,4 @@
-import { IAthleteState } from '../../interfaces/IAppStates';
+import { AthleteState } from '../../interfaces/IAppStates';
 import { LOAD_ATHLETE_DATA_FAIL, LOAD_ATHLETE_DATA_START, LOAD_ATHLETE_DATA_SUCCESS } from '../actions/athleteActions';
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 	errorMessage: ''
 };
 
-const athleteReducer = (state: IAthleteState = initialState, action: any): IAthleteState => {
+const athleteReducer = (state: AthleteState = initialState, action: any): AthleteState => {
 	switch (action.type) {
 		case LOAD_ATHLETE_DATA_START:
 			return {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Table } from 'antd';
-import { TableViewProps } from './ITableView';
 import { columns, footerGenerator } from './tableViewConfig';
+import { ViewProps } from '../../../interfaces/IView';
 
-const TableView: React.FC<TableViewProps> = props => {
+const TableView: React.FC<ViewProps> = props => {
 		const { dataSource } = props;
 
 		return <Table

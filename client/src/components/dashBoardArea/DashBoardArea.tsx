@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { PIE_VIEW, TABLE_VIEW } from '../../constants/views';
 import { loadAthleteData } from '../../store/actions/athleteActions';
 import styled from 'styled-components';
-import { IAppState } from '../../interfaces/IAppStates';
+import { AppState } from '../../interfaces/IAppStates';
 
 const { Content } = Layout;
 
@@ -16,8 +16,8 @@ const ContentContainer = styled.div`
 
 const DashBoardArea: React.FC = () => {
 	const dispatch = useDispatch();
-	const { activeView } = useSelector((state: IAppState) => state.view);
-	const { athletes } = useSelector((state: IAppState) => state.athlete);
+	const { activeView } = useSelector((state: AppState) => state.view);
+	const { athletes } = useSelector((state: AppState) => state.athlete);
 
 	useEffect(() => {
 		dispatch(loadAthleteData());
