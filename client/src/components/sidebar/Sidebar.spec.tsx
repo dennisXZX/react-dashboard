@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '../../utils/test-utils';
+import { render } from '../../test-helpers/test-utils';
 import Sidebar from './Sidebar';
 
 describe('Sidebar', () => {
