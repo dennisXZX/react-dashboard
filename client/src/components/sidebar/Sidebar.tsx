@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
 	const dispatch = useDispatch();
 
 	return (
-		<Sider breakpoint="lg" collapsedWidth="0">
+		<Sider breakpoint="lg" collapsedWidth="0" data-testid="test-sidebar">
 			<Logo src={logoImage} />
 
 			<Menu theme="dark" mode="vertical">
