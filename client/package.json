@@ -31,11 +31,9 @@
 		"redux": "^4.0.4",
 		"redux-thunk": "^2.3.0",
 		"styled-components": "^4.3.2",
-		"typescript": "3.5.3"
+		"typescript": "^3.9.5"
 	},
 	"devDependencies": {
-		"enzyme": "^3.10.0",
-		"enzyme-adapter-react-16": "^1.14.0",
 		"husky": "^3.0.2",
 		"lint-staged": "^9.2.1",
 		"prettier": "^1.18.2"

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PieChart from './pieChart/PieChart';
 import styled from 'styled-components';
 import _ from 'lodash';
@@ -22,12 +22,11 @@ const PieChartContainer = styled.div`
 	}
 `;
 
-class ChartView extends Component<ViewProps> {
-	generateFormattedDataset = (propertyName: string) => {
-		const { dataSource } = this.props;
+const ChartView: React.FC<ViewProps> = props => {
+	const generateFormattedDataset = (propertyName: string) => {
+		const { dataSource } = props;
 
-		// @ts-ignore
-		const rawDataset = dataSource.map(athleteData => athleteData[propertyName]);
+		const rawDataset = dataSource.map(athleteData => (athleteData as any)[propertyName]);
 		const countedDataset = _.countBy(rawDataset);
 		const labels = Object.keys(countedDataset);
 		const data = Object.values(countedDataset);
@@ -38,30 +37,28 @@ class ChartView extends Component<ViewProps> {
 		};
 	};
 
-	render() {
-		const sorenessDataset = this.generateFormattedDataset('muscleSoreness');
-		const sleepQualityDataset = this.generateFormattedDataset('sleepQuality');
+	const sorenessDataset = generateFormattedDataset('muscleSoreness');
+	const sleepQualityDataset = generateFormattedDataset('sleepQuality');
 
-		return (
-			<PieViewContainer>
-				<PieChartContainer>
-					<PieChart
-						dataset={sorenessDataset.data}
-						title="Muscle Soreness Distribution"
-						labels={sorenessDataset.labels}
-					/>
-				</PieChartContainer>
+	return (
+		<PieViewContainer>
+			<PieChartContainer>
+				<PieChart 
+					dataset={sorenessDataset.data} 
+					title="Muscle Soreness Distribution" 
+					labels={sorenessDataset.labels} 
+				/>
+			</PieChartContainer>
 
-				<PieChartContainer>
-					<PieChart
-						dataset={sleepQualityDataset.data}
-						title="Sleep Quality Distribution"
-						labels={sleepQualityDataset.labels}
-					/>
-				</PieChartContainer>
-			</PieViewContainer>
-		);
-	}
-}
+			<PieChartContainer>
+				<PieChart
+					dataset={sleepQualityDataset.data}
+					title="Sleep Quality Distribution"
+					labels={sleepQualityDataset.labels}
+				/>
+			</PieChartContainer>
+		</PieViewContainer>
+	);
+};
 
 export default ChartView;
