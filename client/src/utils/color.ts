@@ -2,7 +2,7 @@
  * @description
  * Generate a array of random color string
  *
- * @param dataset - dataset associated with the generated colors
+ * @param dataset - dataset on which the randomly generated colors would be applied
  */
 export const generateChartColors = (dataset: Array<number>) => {
 	const colors = dataset.map(_ => {
