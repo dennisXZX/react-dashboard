@@ -15,13 +15,13 @@ const Sidebar: React.FC = () => {
 		<Sider breakpoint="lg" collapsedWidth="0" data-testid="test-sidebar">
 			<Logo src={logoImage} />
 
-			<Menu theme="dark" mode="vertical" defaultSelectedKeys={['1']}>
-				<Menu.Item key="1" onClick={() => dispatch(changeView(TABLE_VIEW))}>
+			<Menu theme="dark" mode="vertical" defaultSelectedKeys={['tableView']}>
+				<Menu.Item key="tableView" onClick={() => dispatch(changeView(TABLE_VIEW))}>
 					<Icon type="table" />
 					<span className="nav-text">Table View</span>
 				</Menu.Item>
 
-				<Menu.Item key="2" onClick={() => dispatch(changeView(PIE_VIEW))}>
+				<Menu.Item key="pieView" onClick={() => dispatch(changeView(PIE_VIEW))}>
 					<Icon type="pie-chart" />
 					<span className="nav-text">Pie View</span>
 				</Menu.Item>
