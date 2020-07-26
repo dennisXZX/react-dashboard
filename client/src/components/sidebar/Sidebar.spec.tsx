@@ -1,13 +1,12 @@
 import React from 'react';
-import { render } from '../../test-helpers/test-utils';
+import { render, screen } from '../../test-helpers/test-utils';
 import Sidebar from './Sidebar';
 
 describe('Sidebar', () => {
 	it('should render correct Sidebar based on default props', () => {
-		const wrapper = render(<Sidebar />);
-		const sideBar = wrapper.getByTestId('test-sidebar');
+		render(<Sidebar />);
 
-		expect(sideBar).toBeInTheDocument();
-    expect(sideBar.querySelectorAll('li').length).toEqual(2);
+		expect(screen.getByTestId('test-sidebar')).toBeInTheDocument();
+		expect(screen.getAllByRole('menuitem').length).toEqual(2);
 	});
 });

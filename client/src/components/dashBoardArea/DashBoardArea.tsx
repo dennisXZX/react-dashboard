@@ -24,7 +24,7 @@ const DashBoardArea: React.FC = () => {
 	}, [dispatch]);
 
 	return (
-		<Layout data-testid="dashboardarea-sidebar">
+		<Layout data-testid="test-dashboardarea">
 			<ContentContainer>
 				<Content>
 					{activeView === TABLE_VIEW && <TableView dataSource={athletes} />}

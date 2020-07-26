@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
 		<Sider breakpoint="lg" collapsedWidth="0" data-testid="test-sidebar">
 			<Logo src={logoImage} />
 
-			<Menu theme="dark" mode="vertical">
+			<Menu theme="dark" mode="vertical" defaultSelectedKeys={['1']}>
 				<Menu.Item key="1" onClick={() => dispatch(changeView(TABLE_VIEW))}>
 					<Icon type="table" />
 					<span className="nav-text">Table View</span>

@@ -1,19 +1,17 @@
 import React from 'react';
-import { render } from '../test-helpers/test-utils';
+import { render, screen } from '../test-helpers/test-utils';
 import HomePage from './HomePage';
 
 describe('HomePage', () => {
+	beforeEach(() => {
+		render(<HomePage />);
+	});
+
 	test('should render Sidebar component correctly', () => {
-		const wrapper = render(<HomePage />);
-		const sideBar = wrapper.getByTestId('test-sidebar');
+		expect(screen.getByTestId('test-sidebar')).toBeInTheDocument();
+	});
 
-		expect(sideBar).toBeInTheDocument();
-  });
-  
-  test('should render DashBoardArea component correctly', () => {
-		const wrapper = render(<HomePage />);
-		const dashBoardArea = wrapper.getByTestId('dashboardarea-sidebar');
-
-		expect(dashBoardArea).toBeInTheDocument();
+	test('should render DashBoardArea component correctly', () => {
+		expect(screen.getByTestId('test-dashboardarea')).toBeInTheDocument();
 	});
 });
