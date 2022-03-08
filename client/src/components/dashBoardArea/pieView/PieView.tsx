@@ -26,7 +26,7 @@ const ChartView: React.FC<ViewProps> = props => {
 	const generateFormattedDataset = (propertyName: string) => {
 		const { dataSource } = props;
 
-		const rawDataset = dataSource.map(athleteData => (athleteData as any)[propertyName]);
+		const rawDataset = dataSource.map(athleteData => athleteData[propertyName]);
 		const countedDataset = _.countBy(rawDataset);
 		const labels = Object.keys(countedDataset);
 		const data = Object.values(countedDataset);
@@ -43,10 +43,10 @@ const ChartView: React.FC<ViewProps> = props => {
 	return (
 		<PieViewContainer>
 			<PieChartContainer>
-				<PieChart 
-					dataset={sorenessDataset.data} 
-					title="Muscle Soreness Distribution" 
-					labels={sorenessDataset.labels} 
+				<PieChart
+					dataset={sorenessDataset.data}
+					title="Muscle Soreness Distribution"
+					labels={sorenessDataset.labels}
 				/>
 			</PieChartContainer>
 

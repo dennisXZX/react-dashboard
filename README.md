@@ -32,6 +32,9 @@ Run the app in development mode on `http://localhost:3000/`.
 Launch test runner and run all the tests.
 
 ## Future Improvements
-- Reduce wasted rendering by memorising components.
-- Handle data loading and error states. Currently data loading and error are handled in reducer, but it's not reflected in the UI.
-- Implement lazy loading. Add routing for table view and pie view so we can take advantage of lazy loading.
+- Reduce wasted rendering by memorising (potential candidates: PieView, but have to profile and benchmark first to see how beneficial is the memorisation)
+- Handle data loading and error states. Currently data loading and error states are handled in reducer and saved to Redux store, but it's not reflected in the UI
+- Implement lazy loading. Add routing for table view and pie view so we can take advantage of lazy loading
+- Use `Redux Toolkit` to reduce boilerplate code
+- Extract some common code into custom hook (potential candidates: network call)
+- Type everything correctly, remove all `any` type

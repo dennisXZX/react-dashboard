@@ -22,4 +22,6 @@ export interface FormattedAthlete {
 
 	/** athlete's sleep quality */
 	sleepQuality: number;
+
+	[key: string]: number | string;
 }

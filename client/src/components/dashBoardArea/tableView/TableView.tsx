@@ -7,13 +7,13 @@ const TableView: React.FC<ViewProps> = props => {
 		const { dataSource } = props;
 
 		return (
-      <Table
-        dataSource={dataSource}
-        columns={columns}
-        pagination={false}
-        footer={footerGenerator}
-      />
-    );
+          <Table
+            dataSource={dataSource}
+            columns={columns}
+            pagination={false}
+            footer={footerGenerator}
+          />
+        );
 }
 
 export default TableView;
