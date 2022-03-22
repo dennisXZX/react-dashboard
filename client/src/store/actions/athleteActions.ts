@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { formatAthleteDataset } from '../../utils/dataFormatter';
+import { FormattedAthlete } from '../../interfaces/IAthletes';
 
 /** action types */
 
@@ -18,7 +19,7 @@ const loadAthleteDataFail = (error: any) => ({
 	error
 });
 
-const loadAthleteDataSuccess = (data: any) => ({
+const loadAthleteDataSuccess = (data: Array<FormattedAthlete>) => ({
 	type: LOAD_ATHLETE_DATA_SUCCESS,
 	data
 });
